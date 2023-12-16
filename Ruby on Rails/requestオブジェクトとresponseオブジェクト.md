@@ -45,5 +45,5 @@
 　- レスポンスでカスタムヘッダーを使いたい場合は、response.headersを利用できる
 　- このヘッダー属性はハッシュであり、ヘッダ名と値がその中でマップされている
 　- 一部の値はRailsによって自動的に設定される
-　- ヘッダに追加・変更を行いたい場合は以下のようにresponse.headersに代入する
+　- ヘッダに追加・変更を行いたい場合は以下のようにresponse.headersに代入する。
 　response.headers["Content-Type"] = "application/pdf"
