@@ -82,7 +82,7 @@
  ```
 ## Jsonパラメータ
 - 概要
- - リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセス可能
+ - リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセスが可能
 - 例：JSON形式のデータをRailsアプリケーションで取り扱う方法
  1. JSON形式のコンテンツを送信
  ```
