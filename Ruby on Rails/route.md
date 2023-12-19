@@ -25,7 +25,7 @@
 3. 動的に生成されたパスを返す
 - <%= link_to 'Patient Record', patient_path(@patient) %>
  - 動的な部分(:id)を自動で埋め込んでくれる
- - ルーターによって/patients/17というパスが生成
+ - ルーターによって/patients/17というパスが生成される
 ## Railsルータの設定
 ```
 Rails.application.routes.draw do
