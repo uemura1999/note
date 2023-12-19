@@ -49,7 +49,9 @@ end
  - HTTP verbと、コントローラ内アクションを指すURLが対応付けられる
  - １つのアクションは、db上での特定のCRUD(Create/Read/Update/Delete)操作に対応付けられる
 - resourcesで作成される７つのルーティング
+
 | HTTP verb | パス | コントローラ#アクション | 目的 |
+|---|---|---|---|
 | GET | /photos | photos#index | 全ての写真を一覧表示 |
 | GET | /photos/new | photos#new | 写真を１つ作るためのHTMLファイルを返す |
 | POST | /photos | photos#create | 写真を１つ作成 |
