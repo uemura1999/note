@@ -145,7 +145,9 @@
 - 概要
  - クライアントブラウザから返されるリクエスト
 - request.××のプロパティ
+
 | host | ホスト名を取得 |
+|---|---|
 | format | クライアントからリクエストされたContent-Typeヘッダーを取得 |
 | method | HTTPメソッドを取得 |
 | get? | HTTPメソッドがresources:のいずれかの場合にtrueを返す |
