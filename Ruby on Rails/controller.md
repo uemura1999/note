@@ -108,7 +108,7 @@ GET /clients?ids[]=1&ids[]=2&ids[]=3
 
 ### Jsonパラメータ
 - 概要
-  - リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセス可能
+　- リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセス可能です
 - JSON形式のデータをRailsアプリケーションで取り扱う方法
   - 1.JSON形式のデータ
   { "company": { "name": "acme", "address": "123 Carrot Street" } }
