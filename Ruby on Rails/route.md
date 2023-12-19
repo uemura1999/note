@@ -1,8 +1,8 @@
 # Railsルーターの目的
-- 概要
+#### 概要
  - ユーザーから送られたHTTPリクエストとURLを元に、ルーティングを確認して、どのコントローラーのどのアクションを実行するか決定する
 ## トップページを指定する
-- root "dashboards#index"
+#### root "dashboards#index"
  - rootはトップページのこと
  - ドメイン名の後ろに何もついていない状態のものがrootURL
 ## ルーティングの流れ
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 end
 ```
 # resourcesを使った書き方
-- 概要
+#### 概要
  - コントローラのindex, show, new, edit, create, update, destroyアクション全てを宣言できる
 ## Web上のリソース
 1. RailsがHTTPリクエストを受け取る
@@ -45,10 +45,10 @@ end
 - photosコントローラのdestroyアクションに割り当てる
 - paramsハッシュに{ id: '17'}を含める
 ## CRUD , verb , アクション
-- リソースフルなルーティング
+#### リソースフルなルーティング
  - HTTP verbと、コントローラ内アクションを指すURLが対応付けられる
  - １つのアクションは、db上での特定のCRUD(Create/Read/Update/Delete)操作に対応付けられる
-- resourcesで作成される７つのルーティング
+#### resourcesで作成される７つのルーティング
 
 | HTTP verb | パス | コントローラ#アクション | 目的 |
 |---|---|---|---|
@@ -60,11 +60,11 @@ end
 | PATCH/PUT | /photos/:id | photos#update | 特定の写真を更新する |
 | DELETE | /photos/:id | photos#destroy| 特定の写真を削除する |
 ## パスとURL用ヘルパー
-- 1.概要
+#### 概要
  - RESTfulルーティングを作成すると、コントローラで多くのヘルパーが利用可能
  - URL用ヘルパー
   - リソース名から変数名が自動的に生成され、その変数を利用することで、URLを取得できる
-- 2.resorces :photosの例
+#### resorces :photosの例
 
 | ヘルパー名称 | 得られるURL |
 |---|---|
