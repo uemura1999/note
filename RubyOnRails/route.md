@@ -1,11 +1,11 @@
 # Railsルーターの目的
-- <H3>概要</H3>
+- 概要
   - ユーザーから送られたHTTPリクエストとURLを元に、ルーティングを確認して、どのコントローラーのどのアクションを実行するか決定する
-# トップページを指定する
+## トップページを指定する
 - root "dashboards#index"
   - rootはトップページのこと
   - ドメイン名の後ろに何もついていない状態のものがrootURL
-# ルーティングの流れ
+## ルーティングの流れ
 -  RailsがHTTPリクエストを受け取る
   - GET /patients/17
     - GET：何かを要求している(ページの表示や移動)
@@ -14,7 +14,7 @@
   - get '/patients/:id', to: 'patients#show'
     - コントローラのshowアクションに割り当てられる
     - paramsに{ id: '17' }ハッシュが含まれる
-# コードからパスやURLを生成
+## コードからパスやURLを生成
 - ルーティングヘルパーを生成
   - get '/patients/:id', to: 'patients#show', as: 'patient'
     - コントローラのshowアクションに割り当てられる
@@ -27,15 +27,15 @@
   - <%= link_to 'Patient Record', patient_path(@patient) %>
     - 動的な部分(:id)を自動で埋め込んでくれる
     - ルーターによって/patients/17というパスが生成
-# Railsルータの設定
+## Railsルータの設定
   ```
   Rails.application.routes.draw do
     resources :brands, only: [:index, :show] do
       resources :products, only: [:index, :show]
   end
   ```
-# resourcesを使った書き方
-- <H3>概要</H3>
+## resourcesを使った書き方
+- 概要
   - コントローラのindex, show, new, edit, create, update, destroyアクション全てを宣言できる
 ## Web上のリソース
 - RailsがHTTPリクエストを受け取る
@@ -50,7 +50,7 @@
   - HTTP verbと、コントローラ内アクションを指すURLが対応付けられる
     - HTTP verbについては、 HTTPリクエストメソッド(624f2d140b) を参照
   - １つのアクションは、db上での特定のCRUD(Create/Read/Update/Delete)操作に対応付けられる
-- <H3>resourcesで作成される７つのルーティング</H3>
+- resourcesで作成される７つのルーティング
 
 | HTTP verb | パス | コントローラ#アクション | 目的 |
 |---|---|---|---|
@@ -62,11 +62,11 @@
 | PATCH/PUT | /photos/:id | photos#update | 特定の写真を更新する |
 | DELETE | /photos/:id | photos#destroy| 特定の写真を削除する |
 ## パスとURL用ヘルパー
-- <H3>概要</H3>
+- 概要
   - RESTfulルーティングを作成すると、コントローラで多くのヘルパーが利用可能
   - URL用ヘルパー
     - リソース名から変数名が自動的に生成され、その変数を利用することで、URLを取得できる
-- <H3>resorces :photosの例</H3>
+- resorces :photosの例
 
 | ヘルパー名称 | 得られるURL |
 |---|---|
