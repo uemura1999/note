@@ -196,7 +196,7 @@
   - レスポンスで使用されるヘッダーを表す
   - ヘッダーは様々な情報を含むため、headersハッシュを通じてアクセス
 # カスタムヘッダーを設定する
-- <H3>概要</H3>
+- 概要
   - レスポンスでカスタムヘッダーを使いたい場合は、response.headersを利用
   - ヘッダに追加・変更を行う場合はresponse.headersに代入する
     - response.headers["Content-Type"] = "application/pdf"
