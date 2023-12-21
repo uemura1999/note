@@ -35,35 +35,35 @@
     - URLの末尾に?から始まり、キーと値のペアがキー = 値の形で続く
     - 「http://example.com/page?name=John&age=25」というURLでは、nameとageがクエリ文字パラメータであり、それぞれの値はJohnと25となる
     - 例：/clirnts?status=activated
-  ```rb
-  def index
-    # Client.activatedメソッドクライアントを取得し、@clientsに代入
-    if params[:status] == "activated"
-      @clients = Client.activated
-      # それ以外は無効なクライアントを取得し代入する
-    else
-      @clients = Client.inactivated
+    ```rb
+    def index
+      # Client.activatedメソッドクライアントを取得し、@clientsに代入
+      if params[:status] == "activated"
+        @clients = Client.activated
+        # それ以外は無効なクライアントを取得し代入する
+      else
+        @clients = Client.inactivated
+      end
     end
-  end
-  ```
+    ```
   - POSTデータ
     - データの送信やリソースの作成などに使用され、情報はHTTPリクエストのボディ部分に格納される
     - 例：新しいクライアント情報を作成し、dbに保存
-  ```rb
-  def create
-    # POSTデータを使用し、新規Clientオブジェクトを作成
-    @client = Client.new(params[:client])
-    # dbに新しいレコードの保存が成功したら詳細ページにリダイレクト
-    if @client.save
-     redirect_to @client
-    else
-      # 保存に失敗したらnewビューを再表示するように上書き
-      # ユーザーは再度データを入力して送信できるようになる
-      render "new"
+    ```rb
+    def create
+      # POSTデータを使用し、新規Clientオブジェクトを作成
+      @client = Client.new(params[:client])
+      # dbに新しいレコードの保存が成功したら詳細ページにリダイレクト
+      if @client.save
+       redirect_to @client
+      else
+        # 保存に失敗したらnewビューを再表示するように上書き
+        # ユーザーは再度データを入力して送信できるようになる
+        render "new"
+      end
+      end # TODO: インデントを整理したら、バグを発見しました。インデント大事！
     end
-    end # TODO: インデントを整理したら、バグを発見しました。インデント大事！
-  end
-  ```
+    ```
 ## ハッシュと配列のパラメータ
 - 概要
   - paramsハッシュには、一次元のキーバリューペアの他に、ネストした配列やハッシュも保存できる
