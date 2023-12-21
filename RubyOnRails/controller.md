@@ -33,7 +33,8 @@
 - ２種類のパラメータ
   - クエリ文字列パラメータ
     - URLの末尾に?から始まり、キーと値のペアがキー = 値の形で続く
-    - 「http://example.com/page?name=John&age=25」というURLでは、nameとageがクエリ文字パラメータであり、それぞれの値はJohnと25となる
+    - URLの例：http://example.com/page?name=John&age=25
+      - nameとageがクエリ文字パラメータであり、それぞれの値はJohnと25となる
     - 例：/clirnts?status=activated
     ```rb
     def index
