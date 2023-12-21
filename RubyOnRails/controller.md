@@ -10,9 +10,9 @@
 - 概要
   - アプリケーションがブラウザからのリクエストを受け取ると、ルーティングによってコントローラとアクションが確定し、Railsはそれに応じてコントローラのインスタンスを生成し、アクション名と同じ名前のメソッドを実行する
 - 例：クライアントを一人追加する(1)
-  - ブラウザでappの/clients/newにアクセス
+  - ブラウザでappの/clients/newにアクセスする
   - ClientsControllerのインスタンスを作成しnewメソッドを呼び出す
-  - 指定がないとnewアクションがnew.html.erbビューをレンダリング
+  - 指定がないとnewアクションがnew.html.erbビューをレンダリングする
   ```rb
   class ClientsController<ApplicationController
     def new
@@ -20,8 +20,8 @@
   end
   ```
 - 例：クライアントを一人追加する(2)
-  - newアクション(メソッド)内でClientモデルを新規作成
-  - @clientインスタンス変数が作成
+  - newアクション(メソッド)内でClientモデルを新規作成する
+  - @clientインスタンス変数が作成する
   ```rb
   def new
     @client = Client.new
@@ -62,21 +62,20 @@
         # ユーザーは再度データを入力して送信できるようになる
         render "new"
       end
-      end # TODO: インデントを整理したら、バグを発見しました。インデント大事！
-    end
+    end # TODO: インデントを整理したら、バグを発見しました。インデント大事！（→endが１つ多かったため削除）
     ```
 ##  ハッシュと配列のパラメータ
 - 概要
   - paramsハッシュには、一次元のキーバリューペアの他に、ネストした配列やハッシュも保存できる
 - 例：値の配列をフォームから送信する方法
   - GET /clients?ids[]=1&ids[]=2&ids[]=3
-    - キー名に空の角かっこ[]のペアを追加
-    - 受け取ったparams[:ids]の値は["1", "2", "3"]
+    - キー名に空の角かっこ[]のペアを追加する
+    - 受け取ったparams[:ids]の値は["1", "2", "3"]となる
     - パラメータの値は常に「文字列」となる
 - 例：フォームからハッシュを送信する方法
-  - params[:client]の値
+  - 下記ｈｔｍｌのフォームで、params[:client]が受け取る値は以下である
     - {"name" => "Acme","phone" => "12345", "address" =>{ "postcode" => "12345", "city" => "Carrot City" }}
-  - params[:client][:address]のハッシュがネストしている
+  - params[:client][:address]のハッシュがネストしていることに注意する
   ```html
   <form accept-charset="UTF-8" action="/clients" method="post">
     <input type="text" name="client[name]" value="Acme" />
@@ -87,21 +86,21 @@
   ```
 ##  Jsonパラメータ
 - 概要
-  - リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセス可能
+  - リクエストの"Content-Type"ヘッダーが"application/json"に設定されていれば、JSON形式のパラメータを自動的にparamsハッシュで読み込んで通常と同じようにアクセス可能となる
 - 例：JSON形式のデータをRailsアプリケーションで取り扱う方法
-  - JSON形式のコンテンツを送信
+  - 例えば、以下JSON形式のコンテンツを送信したとする
   ```json
   { "company": { "name": "acme", "address": "123 Carrot Street" } }
   ```
-  - コントローラのparam[:company]が受け取る値
+  - コントローラのparam[:company]は、下記の値を受け取る
   ```json
   { "name" => "acme", "address" => "123 Carrot Street" }
   ```
 ### 用語解説
-- JSON
+- JSONとは？
   - テキストをベースにした軽量なデータ交換を行うフォーマット
   - [キー=値]のオブジェクトや、配列などを含むテキスト形式のデータ
-- Content-Typeヘッダー
+- Content-Typeヘッダーとは？
   - 情報の種類や形式を表すもの(image, jpeg)
 ##### 参考資料
   - https://railsguides.jp/action_controller_overview.html
@@ -126,7 +125,7 @@
 
 ##  renderメソッドを使う
 - 概要
-  - appがブラウザで表示するコンテンツのレンダリングのほとんどは、コントローラのrenderメソッド
+  - appがブラウザで表示するコンテンツのレンダリングのほとんどは、コントローラのrenderメソッドになる
 ##  Action Viewでレンダリングする
 - 例：同じコントローラからデフォルト以外のテンプレートに対応するビューをレンダリングしたい場合
   ```rb
@@ -143,7 +142,7 @@
 ##  requestオブジェクトとresponseオブジェクト
 - ２つのアクセサメソッド(インスタンス変数の値を読み書きするメソッド)
   - requestメソッド
-    - リクエストを送ってきたユーザのヘッダー情報や環境変数を取得
+    - リクエストを送ってきたユーザのヘッダー情報や環境変数を取得する
 - responseメソッド
   - クライアントに戻されようとしている内容を表す
 ##  requestオブジェクト
