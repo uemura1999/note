@@ -74,8 +74,6 @@
 | new_リソース名_path | /リソース名/new |
 | edit_リソース名_path(:id) | /リソース名/:id/edit |
 | リソース名_path(:id) | /リソース名/:id |
-<<<<<<< HEAD
-=======
 ##  複数のリソースを同時に定義する
 - resources :photos, :books, :videos
   - リソースを一度に定義することができる
@@ -196,7 +194,6 @@ end
   - GET + /comments/new/previewのパスが認識される
   - Commentsコントローラのpreviewアクションにルーティング
   - preview_new_comment_urlやpreview_new_comment_pathが生成される
->>>>>>> 939f69a (Inital commit)
 ##### 参考資料
   - https://railsguides.jp/routing.html
   - https://programming-i.net/rails-routing
