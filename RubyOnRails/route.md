@@ -106,9 +106,18 @@
     - resources :magazines do
        resources :ads
       end
-- ルーティングヘルパー
+- 下記のルーティングヘルパーが作成される
   - magazine_ads_url
   - edit_magazine_ad_path
+- ネスティング回数の上限
+  - 1回にとどめて、2回以上ネストするべきではない
+- 浅いネスト
+  - コレクションのアクションだけを親のスコープの下で生成する
+  ```
+  resources :articles do
+    resources :comments, only: [:index, :new, :create]
+  end
+  ```
 
 ##  ルーティングの「concern」機能
 - 他のリソースやルーティング内で使い回せる共通のルーティングを宣言できる
@@ -129,9 +138,6 @@
     - namespace :articles do
        concerns :commentable
       end
-- ネスティング回数の上限
-  - ネストしたリソースの中で別のリソースをネストできる
-  - リソースのネスティングは1回にとどめる必要がある
 ##  オブジェクトからパスとURLを作成する
 ```以下のルーティングを活用
 resources :magazines do
