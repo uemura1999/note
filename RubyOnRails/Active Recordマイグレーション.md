@@ -79,7 +79,7 @@
   end
   ```
 ##  新しいテーブルを作成する
-- マイグレーション名が、Create✗✗✗で、その後にカラム名と型が続く場合は、✗✗✗という名前のテーブルが作成され、指定の型のカラム名がその中に生成される
+- マイグレーション名が、Create✗✗✗で、その後にカラム名と型が続く場合は、✗✗✗という名前のテーブルが作成され、指定の型のカラム名がその中に生成される。
   - $ bin/rails generate migration CreateProducts name:string part_number:string
   ```rb
   class CreateProducts < ActiveRecord::Migration[7.1]
