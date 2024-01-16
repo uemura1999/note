@@ -34,5 +34,5 @@ DBが操作を実行し、結果をモデルに返す
 ##  アンケート結果を格納するモデルを作成する（事前準備）
 - Modelとマイグレーションファイルの作成
   ```rails g model User　question:integer```
-- データベースの作成
+- マイグレーションの実行
   ```rails db:migrate```
