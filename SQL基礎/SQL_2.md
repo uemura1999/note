@@ -1,0 +1,33 @@
+##  実践的なSQLを学ぼう
+- データ同士を計算して新しいデータを作り出す
+  - 検索結果から指定したカラムの重複するデータを除く
+    - DISTINCT(カラム名)
+      - SELECT DISTINCT(name) FROM purchases;
+        - purchasesからnameカラムの重複データを省いて取得する
+  - 整理されたデータを四則演算で計算する
+    - 足す(+), 引く(-), 掛ける(*), 割る(/)
+      - SELECT price * 1.08 FROM purchases;
+        - purchasesのpriceカラムのデータに8%の消費税を加える
+##  集計関数を使おう
+- データを集計して新しいデータを作り出す
+  - データの合計値を求める
+    - SUM(カラム名)
+      - SELECT SUM(price) FROM purchases;
+        - purchasesのpriceカラムのデータの合計値を求める
+  - データの平均値を求める
+    - AVG(カラム名)
+      - SELECT AVG(price) FROM purchases;
+        - purchasesのpriceカラムのデータの平均値を求める
+  - データの最大値を求める
+    - MAX(カラム名)
+      - SELECT MAX(price) FROM purchases;
+        - purchasesのpriceカラムのデータの最大値を求める
+  - データの最小値を求める
+    - MIN(カラム名)
+      - SELECT MIN(price) FROM purchases;
+        - purchasesのpriceカラムのデータの最小値を求める
+  - データの件数を求める
+    - COUNT(カラム名)
+      - SELECT COUNT(*) FROM purchases;
+        - purchasesのレコード数を求める
+##  データをグループ化しよう
